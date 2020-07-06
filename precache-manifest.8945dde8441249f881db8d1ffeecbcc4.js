@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "783f83d8c6bc6eb36464623ec9d4f555",
+    "revision": "f7098e96e6a6e65b98d66d0bc44ced70",
     "url": "/dog-api/index.html"
   },
   {
