@@ -5,14 +5,14 @@ import Popup from '../Popup/Popup';
 
 const Navbar = ({ searchValue, handleInputChange, isOpen, items, onClick, location }) => {
   const [toShowDDM, setShowDDM] = useState(false);
-  const [redirect, setRedirect] = useState('');
+  let redirect = '';
 
   let history = useHistory();
 
   return redirect
     ? <>
       <Redirect to={redirect} />
-      {setRedirect('')}
+      {redirect = ''}
     </>
     : (
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
@@ -28,13 +28,13 @@ const Navbar = ({ searchValue, handleInputChange, isOpen, items, onClick, locati
             onSubmit={() => {
               console.log(`${searchValue ? items.length > 0 ? `dog-api/${items[0][0]}${items[0][1] ? `/${items[0][1]}?` : '?'}` : '/' : `/${location.pathname.split('/').filter(elem => !elem.includes('=') && elem.length > 0).join('/')}`}`)
 
-              setRedirect(`${searchValue
+              redirect = `${searchValue
                 ? items.length > 0
                   ? `/dog-api/${items[0][0]}${items[0][1]
                     ? `/${items[0][1]}?`
                     : '?'}`
                   : '/'
-                : `${location.pathname.split('/').filter(elem => !elem.includes('=') && elem.length > 0).join('/')}`}`);
+                : `${location.pathname.split('/').filter(elem => !elem.includes('=') && elem.length > 0).join('/')}`}`;
               // history.push({
               //   pathname: `${searchValue
               //     ? items.length > 0
