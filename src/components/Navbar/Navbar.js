@@ -22,7 +22,7 @@ const Navbar = ({ searchValue, handleInputChange, isOpen, items, onClick, locati
           onSubmit={() => {
             console.log(`${searchValue ? items.length > 0 ? `dog-api/${items[0][0]}${items[0][1] ? `/${items[0][1]}?` : '?'}` : '/' : `/${location.pathname.split('/').filter(elem => !elem.includes('=') && elem.length > 0).join('/')}`}`)
 
-            history.replace({
+            history.push({
               pathname: `${searchValue
                 ? items.length > 0
                   ? `/dog-api/${items[0][0]}${items[0][1]
