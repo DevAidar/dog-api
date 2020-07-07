@@ -10,7 +10,10 @@ const Navbar = ({ searchValue, handleInputChange, isOpen, items, onClick, locati
   let history = useHistory();
 
   return redirect
-    ? <Redirect to={redirect} />
+    ? <>
+      <Redirect to={redirect} />
+      {setRedirect('')}
+    </>
     : (
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <Link className="navbar-brand mr-auto mr-lg-0" to="/dog-api/">Doggos and Puppers</Link>
